@@ -3,8 +3,9 @@ from constants import PLAYER_RADIUS, PLAYER_TURN_SPEED, PLAYER_SPEED
 import pygame
 
 
-class Player(CircleShape):
+class Player(CircleShape, pygame.sprite.Sprite):
     def __init__(self, x: int, y: int):
+        pygame.sprite.Sprite.__init__(self)
         super().__init__(x, y, PLAYER_RADIUS)
         self.rotation = 0
 
